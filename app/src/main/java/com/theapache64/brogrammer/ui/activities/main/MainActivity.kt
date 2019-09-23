@@ -33,6 +33,9 @@ class MainActivity : BaseAppCompatActivity(), MainHandler {
 
         binding.ivGymBoy.apply {
             post {
+                /**
+                 * Animating gym boy
+                 */
                 YoYo.with(Techniques.Tada)
                     .duration(1500)
                     .repeat(YoYo.INFINITE)
