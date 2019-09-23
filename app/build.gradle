@@ -62,9 +62,13 @@ dependencies {
     implementation "com.theapache64.twinkill:core:$twinkill_version"
     implementation "com.theapache64.twinkill:logger:$twinkill_version"
 
+    // Animation
     implementation 'com.android.support:support-compat:25.1.1'
     implementation 'com.daimajia.easing:library:2.0@aar'
     implementation 'com.daimajia.androidanimations:library:2.3@aar'
+
+    // Moshi
+    implementation "com.squareup.moshi:moshi-kotlin:1.8.0"
 
     // Test
     testImplementation "junit:junit:$junit_version"
