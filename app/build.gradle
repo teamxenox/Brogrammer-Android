@@ -50,7 +50,6 @@ dependencies {
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
     kapt "com.google.dagger:dagger-android-processor:$dagger_version"
 
-    
 
     // MaterialColors
     implementation 'com.theah64.materialcolors:materialcolors:1.0.0'
@@ -59,6 +58,10 @@ dependencies {
     def twinkill_version = '1.0.0-alpha02'
     implementation "com.theapache64.twinkill:core:$twinkill_version"
     implementation "com.theapache64.twinkill:logger:$twinkill_version"
+
+    implementation 'com.android.support:support-compat:25.1.1'
+    implementation 'com.daimajia.easing:library:2.0@aar'
+    implementation 'com.daimajia.androidanimations:library:2.3@aar'
 
     // Test
     testImplementation "junit:junit:$junit_version"

@@ -1,20 +1,16 @@
 package com.theapache64.brogrammer.ui.activities.main
 
+
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import androidx.appcompat.widget.Toolbar
-import androidx.lifecycle.Observer
+import android.view.animation.AccelerateDecelerateInterpolator
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
+import com.daimajia.androidanimations.library.Techniques
+import com.daimajia.androidanimations.library.YoYo
 import com.theapache64.brogrammer.R
 import com.theapache64.brogrammer.databinding.ActivityMainBinding
-
-
 import com.theapache64.twinkill.ui.activities.base.BaseAppCompatActivity
 import com.theapache64.twinkill.utils.extensions.bindContentView
 import dagger.android.AndroidInjection
@@ -34,21 +30,16 @@ class MainActivity : BaseAppCompatActivity(), MainHandler {
         this.viewModel = ViewModelProviders.of(this, factory).get(MainViewModel::class.java)
         binding.viewModel = viewModel
         binding.handler = this
-    }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        return when (item.itemId) {
-                R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
+        binding.ivGymBoy.apply {
+            post {
+                YoYo.with(Techniques.Tada)
+                    .duration(1500)
+                    .repeat(YoYo.INFINITE)
+                    .interpolate(AccelerateDecelerateInterpolator())
+                    .pivot(YoYo.CENTER_PIVOT, YoYo.CENTER_PIVOT)
+                    .playOn(this)
+            }
         }
     }
 
