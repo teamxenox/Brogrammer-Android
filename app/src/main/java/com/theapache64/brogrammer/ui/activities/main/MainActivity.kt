@@ -3,6 +3,7 @@ package com.theapache64.brogrammer.ui.activities.main
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.animation.AccelerateDecelerateInterpolator
 import androidx.lifecycle.ViewModelProvider
@@ -17,6 +18,15 @@ import dagger.android.AndroidInjection
 import javax.inject.Inject
 
 class MainActivity : BaseAppCompatActivity(), MainHandler {
+
+    companion object {
+        const val ID = R.id.MAIN_ACTIVITY_ID
+
+        fun getStartIntent(context: Context): Intent {
+            val intent = Intent(context, MainActivity::class.java)
+            return intent
+        }
+    }
 
     @Inject
     lateinit var factory: ViewModelProvider.Factory
@@ -46,12 +56,22 @@ class MainActivity : BaseAppCompatActivity(), MainHandler {
         }
     }
 
-    companion object {
-        const val ID = R.id.MAIN_ACTIVITY_ID
+    override fun onRandomClgClicked() {
 
-        fun getStartIntent(context: Context): Intent {
-            val intent = Intent(context, MainActivity::class.java)
-            return intent
-        }
     }
+
+    override fun onCreateClgClicked() {
+
+    }
+
+    override fun onSignClicked() {
+        startActivity(
+            Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://teamxenox.com/")
+            )
+        )
+    }
+
+
 }

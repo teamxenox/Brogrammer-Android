@@ -1,4 +1,5 @@
 package com.theapache64.brogrammer.di.modules
+import com.theapache64.brogrammer.ui.activities.trainer.TrainerViewModel
 
 import androidx.lifecycle.ViewModel
 import com.theapache64.brogrammer.ui.activities.main.MainViewModel
@@ -17,4 +18,9 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(MainViewModel::class)
     abstract fun bindMainViewModel(viewModel: MainViewModel): ViewModel
+@Binds
+@IntoMap
+@ViewModelKey(TrainerViewModel::class)
+abstract fun bindTrainerViewModel(viewModel: TrainerViewModel): ViewModel
+
 }

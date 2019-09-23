@@ -1,4 +1,5 @@
 package com.theapache64.brogrammer.di.modules
+import com.theapache64.brogrammer.ui.activities.trainer.TrainerActivity
 
 
 import com.theapache64.brogrammer.ui.activities.main.MainActivity
@@ -15,4 +16,7 @@ abstract class ActivitiesBuilderModule {
 
     @ContributesAndroidInjector
     abstract fun getMainActivity(): MainActivity
+@ContributesAndroidInjector
+abstract fun getTrainerActivity(): TrainerActivity
+
 }

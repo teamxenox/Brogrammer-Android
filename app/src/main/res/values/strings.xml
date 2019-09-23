@@ -4,4 +4,5 @@
     <string name="main_title">Brogrammer!</string>
     <string name="action_take_random_clg">TAKE RANDOM CHALLENGE</string>
     <string name="action_create_clg">CREATE YOUR OWN CHALLENGE</string>
+    <string name="main_made_with">Made with ❤ by Team XenoX</string>
 </resources>
