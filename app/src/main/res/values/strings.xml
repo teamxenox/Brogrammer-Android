@@ -5,4 +5,6 @@
     <string name="action_take_random_clg">TAKE RANDOM CHALLENGE</string>
     <string name="action_create_clg">CREATE YOUR OWN CHALLENGE</string>
     <string name="main_made_with">Made with ❤ by Team XenoX</string>
+    <string name="trainer_finding">Finding Best Excercises for you...</string>
+    <string name="action_skip">SKIP</string>
 </resources>

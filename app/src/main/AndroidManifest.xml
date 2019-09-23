@@ -16,7 +16,10 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="m">
-        <activity android:name=".ui.activities.trainer.TrainerActivity"></activity>
+        <activity
+            android:name=".ui.activities.trainer.TrainerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <!-- Main -->
         <activity
             android:name=".ui.activities.main.MainActivity"

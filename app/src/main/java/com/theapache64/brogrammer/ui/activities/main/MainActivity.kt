@@ -12,6 +12,7 @@ import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
 import com.theapache64.brogrammer.R
 import com.theapache64.brogrammer.databinding.ActivityMainBinding
+import com.theapache64.brogrammer.ui.activities.trainer.TrainerActivity
 import com.theapache64.twinkill.ui.activities.base.BaseAppCompatActivity
 import com.theapache64.twinkill.utils.extensions.bindContentView
 import dagger.android.AndroidInjection
@@ -54,10 +55,12 @@ class MainActivity : BaseAppCompatActivity(), MainHandler {
                     .playOn(this)
             }
         }
+
+        onRandomClgClicked()
     }
 
     override fun onRandomClgClicked() {
-
+        startActivity(TrainerActivity.getStartIntent(this))
     }
 
     override fun onCreateClgClicked() {
