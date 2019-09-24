@@ -2,7 +2,7 @@ package com.theapache64.brogrammer.models
 
 import com.squareup.moshi.Json
 
-data class Excercices(
+data class Exercise(
     @Json(name = "duration")
     val duration: Duration,
     @Json(name = "gif")
