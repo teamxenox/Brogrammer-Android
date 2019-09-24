@@ -12,6 +12,7 @@ class ExerciseRepository @Inject constructor(
     private val context: Context,
     private val moshi: Moshi
 ) {
+
     val exercises by lazy {
         val jsonString = context.assets.open("json/exercises.json").bufferedReader().readText()
         val moshiType = Types.newParameterizedType(List::class.java, Exercise::class.java)

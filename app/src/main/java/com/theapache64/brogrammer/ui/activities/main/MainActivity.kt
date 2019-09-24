@@ -12,6 +12,7 @@ import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
 import com.theapache64.brogrammer.R
 import com.theapache64.brogrammer.databinding.ActivityMainBinding
+import com.theapache64.brogrammer.ui.activities.challenge.ChallengeActivity
 import com.theapache64.brogrammer.ui.activities.trainer.TrainerActivity
 import com.theapache64.twinkill.ui.activities.base.BaseAppCompatActivity
 import com.theapache64.twinkill.utils.extensions.bindContentView
@@ -56,15 +57,15 @@ class MainActivity : BaseAppCompatActivity(), MainHandler {
             }
         }
 
-        onRandomClgClicked()
+        onCreateClgClicked()
     }
 
     override fun onRandomClgClicked() {
-        startActivity(TrainerActivity.getStartIntent(this))
+        startActivity(TrainerActivity.getStartIntent(this, null))
     }
 
     override fun onCreateClgClicked() {
-
+        startActivity(ChallengeActivity.getStartIntent(this))
     }
 
     override fun onSignClicked() {

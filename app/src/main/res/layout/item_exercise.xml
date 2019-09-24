@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="exercise"
+            type="com.theapache64.brogrammer.models.Exercise" />
+    </data>
+
+    <!--Title-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:background="@drawable/exercise_bg_selector"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="15dp"
+        android:text="@{exercise.title}"
+        android:textColor="@{exercise.isSelected ? @andoid:color/white : @color/tiber}"
+        app:selected="@{exercise.isSelected}"
+        tools:text="@tools:sample/lorem" />
+</layout>

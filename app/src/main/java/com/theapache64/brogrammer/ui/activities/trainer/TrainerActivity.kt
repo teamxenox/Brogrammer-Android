@@ -9,6 +9,7 @@ import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
 import com.theapache64.brogrammer.R
 import com.theapache64.brogrammer.databinding.ActivityTrainerBinding
+import com.theapache64.brogrammer.models.Challenge
 import com.theapache64.twinkill.ui.activities.base.BaseAppCompatActivity
 import com.theapache64.twinkill.utils.extensions.bindContentView
 import dagger.android.AndroidInjection
@@ -18,10 +19,11 @@ class TrainerActivity : BaseAppCompatActivity(), TrainerHandler {
 
 
     companion object {
-
-        fun getStartIntent(context: Context): Intent {
+        private const val KEY_CHALLENGE = "challenge"
+        fun getStartIntent(context: Context, challenge: Challenge?): Intent {
             return Intent(context, TrainerActivity::class.java).apply {
                 // data goes here
+                putExtra(KEY_CHALLENGE, challenge)
             }
         }
     }
@@ -53,6 +55,7 @@ class TrainerActivity : BaseAppCompatActivity(), TrainerHandler {
                     .playOn(binding.ivRatRocket)
             }
         }
+
     }
 
     override fun onGoBackClicked() {

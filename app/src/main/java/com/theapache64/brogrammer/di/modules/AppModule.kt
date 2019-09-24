@@ -1,6 +1,7 @@
 package com.theapache64.brogrammer.di.modules
 
 import android.app.Application
+import com.theapache64.twinkill.di.modules.ContextModule
 
 import dagger.Module
 import dagger.Provides
@@ -10,6 +11,8 @@ import dagger.android.support.AndroidSupportInjectionModule
     includes = [
         AndroidSupportInjectionModule::class,
         FontModule::class,
+        ContextModule::class,
+        MoshiModule::class,
         ViewModelModule::class,
         ActivitiesBuilderModule::class
     ]

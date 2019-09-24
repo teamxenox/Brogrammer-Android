@@ -5,6 +5,7 @@ import android.app.Activity
 import android.app.Application
 import com.theapache64.brogrammer.di.components.DaggerAppComponent
 import com.theapache64.twinkill.TwinKill
+import com.theapache64.twinkill.di.modules.ContextModule
 import com.theapache64.twinkill.utils.Font
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
@@ -26,6 +27,7 @@ class App : Application(), HasActivityInjector {
 
         // Dagger
         DaggerAppComponent.builder()
+            .contextModule(ContextModule(this))
             .build()
             .inject(this)
 

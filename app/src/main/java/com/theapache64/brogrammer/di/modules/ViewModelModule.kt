@@ -1,4 +1,5 @@
 package com.theapache64.brogrammer.di.modules
+import com.theapache64.brogrammer.ui.activities.challenge.ChallengeViewModel
 import com.theapache64.brogrammer.ui.activities.trainer.TrainerViewModel
 
 import androidx.lifecycle.ViewModel
@@ -22,5 +23,10 @@ abstract class ViewModelModule {
 @IntoMap
 @ViewModelKey(TrainerViewModel::class)
 abstract fun bindTrainerViewModel(viewModel: TrainerViewModel): ViewModel
+
+@Binds
+@IntoMap
+@ViewModelKey(ChallengeViewModel::class)
+abstract fun bindChallengeViewModel(viewModel: ChallengeViewModel): ViewModel
 
 }

@@ -17,9 +17,14 @@
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="m">
         <activity
+            android:name=".ui.activities.challenge.ChallengeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".ui.activities.trainer.TrainerActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <!-- Main -->
         <activity
             android:name=".ui.activities.main.MainActivity"

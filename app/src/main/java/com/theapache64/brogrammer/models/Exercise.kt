@@ -3,14 +3,15 @@ package com.theapache64.brogrammer.models
 import com.squareup.moshi.Json
 
 data class Exercise(
+    @Json(name = "title")
+    val title: String, // Triceps Dips
     @Json(name = "duration")
     val duration: Duration,
     @Json(name = "gif")
     val gif: String, // https://raw.githubusercontent.com/sarthology/brogrammers/master/src/images/tricepdips.gif
     @Json(name = "reps")
     val reps: Reps,
-    @Json(name = "title")
-    val title: String // Triceps Dips
+    var isSelected: Boolean = false
 ) {
     data class Reps(
         @Json(name = "easy")
