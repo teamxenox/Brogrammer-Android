@@ -19,9 +19,10 @@
         android:background="@drawable/exercise_bg_selector"
         android:clickable="true"
         android:focusable="true"
-        android:padding="15dp"
+        android:padding="8dp"
         android:text="@{exercise.title}"
         android:textColor="@{exercise.isSelected ? @andoid:color/white : @color/tiber}"
+        android:textSize="18sp"
         app:selected="@{exercise.isSelected}"
         tools:text="@tools:sample/lorem" />
 </layout>
