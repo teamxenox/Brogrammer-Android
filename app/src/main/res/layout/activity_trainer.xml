@@ -15,97 +15,103 @@
             type="com.theapache64.brogrammer.ui.activities.trainer.TrainerViewModel" />
     </data>
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
+        android:orientation="vertical"
         android:layout_height="wrap_content">
 
-        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
+        <!--Back/Home button-->
+        <ImageButton
+            android:id="@+id/ib_go_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:onClick="@{()->handler.onGoBackClicked()}"
+            android:padding="16dp"
+            android:src="@drawable/ic_arrow_back_black_24dp"
+            android:tint="@color/colorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context="com.theapache64.brogrammer.ui.activities.trainer.TrainerActivity">
+            android:layout_height="wrap_content">
 
-
-            <!--Back/Home button-->
-            <ImageButton
-                android:id="@+id/ib_go_back"
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="?android:attr/selectableItemBackground"
-                android:onClick="@{()->handler.onGoBackClicked()}"
-                android:padding="16dp"
-                android:src="@drawable/ic_arrow_back_black_24dp"
-                android:tint="@color/colorPrimary"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                tools:context="com.theapache64.brogrammer.ui.activities.trainer.TrainerActivity">
 
 
-            <ImageView
-                android:id="@+id/iv_rat_rocket"
-                android:layout_width="@dimen/gym_boy_size"
-                android:layout_height="@dimen/gym_boy_size"
-                android:layout_marginTop="18dp"
-                android:src="@drawable/ic_rocket_rat"
-                app:layout_constraintEnd_toEndOf="@id/tv_trainer_title"
-                app:layout_constraintStart_toStartOf="@id/tv_trainer_title"
-                app:layout_constraintTop_toBottomOf="@id/tv_trainer_title" />
+                <ImageView
+                    android:id="@+id/iv_rat_rocket"
+                    android:layout_width="@dimen/gym_boy_size"
+                    android:layout_height="@dimen/gym_boy_size"
+                    android:layout_marginTop="18dp"
+                    android:src="@drawable/ic_rocket_rat"
+                    app:layout_constraintEnd_toEndOf="@id/tv_trainer_title"
+                    app:layout_constraintStart_toStartOf="@id/tv_trainer_title"
+                    app:layout_constraintTop_toBottomOf="@id/tv_trainer_title" />
 
 
-            <!--Brogrammer-->
-            <TextView
-                android:id="@+id/tv_trainer_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginBottom="36dp"
-                android:gravity="center"
-                android:text="@string/main_title"
-                android:textSize="42sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ib_go_back" />
+                <!--Brogrammer-->
+                <TextView
+                    android:id="@+id/tv_trainer_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="36dp"
+                    android:gravity="center"
+                    android:text="@string/main_title"
+                    android:textSize="42sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <!--Finding...-->
-            <TextView
-                android:id="@+id/tv_finding"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
-                android:text="@string/trainer_finding"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="@id/iv_rat_rocket"
-                app:layout_constraintStart_toStartOf="@id/iv_rat_rocket"
-                app:layout_constraintTop_toBottomOf="@id/iv_rat_rocket" />
+                <!--Finding...-->
+                <TextView
+                    android:id="@+id/tv_finding"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/trainer_finding"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@id/iv_rat_rocket"
+                    app:layout_constraintStart_toStartOf="@id/iv_rat_rocket"
+                    app:layout_constraintTop_toBottomOf="@id/iv_rat_rocket" />
 
-            <!--Timer-->
-            <TextView
-                android:id="@+id/tv_timer"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:text="00:00:00"
-                android:textSize="48sp"
-                app:layout_constraintEnd_toEndOf="@id/tv_finding"
-                app:layout_constraintStart_toStartOf="@id/tv_finding"
-                app:layout_constraintTop_toBottomOf="@id/tv_finding" />
+                <!--Timer-->
+                <TextView
+                    android:id="@+id/tv_timer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="00:00:00"
+                    android:textSize="48sp"
+                    app:layout_constraintEnd_toEndOf="@id/tv_finding"
+                    app:layout_constraintStart_toStartOf="@id/tv_finding"
+                    app:layout_constraintTop_toBottomOf="@id/tv_finding" />
 
-            <!--Skip-->
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/b_skip"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="?android:attr/selectableItemBackground"
-                android:text="@string/action_skip"
-                android:textSize="36sp"
-                app:layout_constraintEnd_toEndOf="@id/tv_timer"
-                app:layout_constraintStart_toStartOf="@id/tv_timer"
-                app:layout_constraintTop_toBottomOf="@id/tv_timer" />
+                <!--Skip-->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/b_skip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:text="@string/action_skip"
+                    android:textSize="36sp"
+                    app:layout_constraintEnd_toEndOf="@id/tv_timer"
+                    app:layout_constraintStart_toStartOf="@id/tv_timer"
+                    app:layout_constraintTop_toBottomOf="@id/tv_timer" />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
 
 </layout>
