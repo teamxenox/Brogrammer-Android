@@ -1,4 +1,4 @@
-package com.theapache64.brogrammer
+package com.teamxenox.brogrammer
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
@@ -17,6 +17,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.theapache64.brogrammer", appContext.packageName)
+        assertEquals("com.teamxenox.brogrammer", appContext.packageName)
     }
 }

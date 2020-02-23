@@ -7,22 +7,22 @@
 
         <variable
             name="handler"
-            type="com.theapache64.brogrammer.ui.activities.challenge.ChallengeHandler" />
+            type="com.teamxenox.brogrammer.ui.activities.challenge.ChallengeHandler" />
 
         <variable
             name="viewModel"
-            type="com.theapache64.brogrammer.ui.activities.challenge.ChallengeViewModel" />
+            type="com.teamxenox.brogrammer.ui.activities.challenge.ChallengeViewModel" />
 
         <variable
             name="viewModelStatic"
-            type="com.theapache64.brogrammer.ui.activities.challenge.ChallengeViewModel.Companion" />
+            type="com.teamxenox.brogrammer.ui.activities.challenge.ChallengeViewModel.Companion" />
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        tools:context="com.theapache64.brogrammer.ui.activities.challenge.ChallengeActivity">
+        tools:context="com.teamxenox.brogrammer.ui.activities.challenge.ChallengeActivity">
 
 
         <!--Back/Home button-->

@@ -1,4 +1,4 @@
-package com.theapache64.brogrammer.utils
+package com.teamxenox.brogrammer.utils
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.theapache64.brogrammer
+package com.teamxenox.brogrammer
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
