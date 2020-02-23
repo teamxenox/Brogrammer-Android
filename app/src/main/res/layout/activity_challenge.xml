@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
 
     <data>
@@ -11,13 +12,18 @@
         <variable
             name="viewModel"
             type="com.theapache64.brogrammer.ui.activities.challenge.ChallengeViewModel" />
+
+        <variable
+            name="viewModelStatic"
+            type="com.theapache64.brogrammer.ui.activities.challenge.ChallengeViewModel.Companion" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         tools:context="com.theapache64.brogrammer.ui.activities.challenge.ChallengeActivity">
+
 
         <!--Back/Home button-->
         <ImageButton
@@ -29,8 +35,7 @@
             android:padding="16dp"
             android:src="@drawable/ic_arrow_back_black_24dp"
             android:tint="@color/colorPrimary"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            tools:ignore="ContentDescription" />
 
 
         <ScrollView
@@ -59,17 +64,20 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
+
+                <!--Select exercises-->
                 <TextView
                     android:id="@+id/tv_label_select_exercise"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginTop="18dp"
+                    android:layout_marginTop="@dimen/label_top_margin"
                     android:layout_marginRight="8dp"
                     android:text="@string/label_select_exercise"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_clg_title" />
 
+                <!--Exercises-->
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_exercises"
                     android:layout_width="match_parent"
@@ -79,12 +87,122 @@
                     app:layout_constraintStart_toStartOf="@id/tv_label_select_exercise"
                     app:layout_constraintTop_toBottomOf="@id/tv_label_select_exercise" />
 
+                <!--Work Hour Label -->
+                <TextView
+                    android:id="@+id/tv_label_work_hrs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/label_top_margin"
+                    android:text="@string/label_work_hrs"
+                    app:layout_constraintStart_toStartOf="@id/tv_label_select_exercise"
+                    app:layout_constraintTop_toBottomOf="@id/rv_exercises" />
+
+                <!--Work Hour-->
+                <com.xw.repo.BubbleSeekBar
+                    android:id="@+id/bsb_work_hrs"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:bsb_auto_adjust_section_mark="true"
+                    app:bsb_hide_bubble="true"
+                    app:bsb_section_text_position="below_section_mark"
+                    app:bsb_section_text_size="10sp"
+                    app:bsb_show_section_mark="true"
+                    app:bsb_show_section_text="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tv_label_work_hrs"
+                    app:layout_constraintTop_toBottomOf="@id/tv_label_work_hrs" />
+
+
+                <!--Frequency-->
+                <TextView
+                    android:id="@+id/tv_label_frequency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/label_top_margin"
+                    android:text="@string/label_frequency"
+                    app:layout_constraintStart_toStartOf="@id/tv_label_select_exercise"
+                    app:layout_constraintTop_toBottomOf="@id/bsb_work_hrs" />
+
+
+                <com.xw.repo.BubbleSeekBar
+                    android:id="@+id/bsb_frequency"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:bsb_auto_adjust_section_mark="true"
+                    app:bsb_hide_bubble="true"
+                    app:bsb_min="1"
+                    app:bsb_section_text_position="below_section_mark"
+                    app:bsb_section_text_size="10sp"
+                    app:bsb_show_section_mark="true"
+                    app:bsb_show_section_text="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tv_label_frequency"
+                    app:layout_constraintTop_toBottomOf="@id/tv_label_frequency" />
+
+
+                <TextView
+                    android:id="@+id/tv_label_level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/label_top_margin"
+                    android:text="@string/label_level_of_exercise"
+                    app:layout_constraintStart_toStartOf="@id/bsb_frequency"
+                    app:layout_constraintTop_toBottomOf="@id/bsb_frequency" />
+
+                <RadioGroup
+                    android:id="@+id/rg_levels"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tv_label_level"
+                    app:layout_constraintTop_toBottomOf="@id/tv_label_level">
+
+                    <RadioButton
+                        android:id="@+id/rb_easy"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/label_easy" />
+
+                    <RadioButton
+                        android:id="@+id/rb_medium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/label_medium" />
+
+                    <RadioButton
+                        android:id="@+id/rb_hard"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/label_hard" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/b_start_session"
+                    style="@style/mainButton"
+                    android:layout_margin="18dp"
+                    android:background="@drawable/main_bg_froly_selector"
+                    android:onClick="@{()->handler.onStartSessionClicked()}"
+                    android:text="@string/action_start_session"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintEnd_toEndOf="@id/rg_levels"
+                    app:layout_constraintStart_toStartOf="@id/rg_levels"
+                    app:layout_constraintTop_toBottomOf="@id/rg_levels" />
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 
 </layout>
