@@ -7,7 +7,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion compile_sdk_version
     defaultConfig {
-        applicationId "com.theapache64.brogrammer"
+        applicationId "com.teamxenox.brogrammer"
         minSdkVersion min_sdk_version
         targetSdkVersion target_sdk_version
         versionCode 10001

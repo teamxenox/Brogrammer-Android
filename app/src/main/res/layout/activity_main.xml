@@ -7,11 +7,11 @@
 
         <variable
             name="viewModel"
-            type="com.theapache64.brogrammer.ui.activities.main.MainViewModel" />
+            type="com.teamxenox.brogrammer.ui.activities.main.MainViewModel" />
 
         <variable
             name="handler"
-            type="com.theapache64.brogrammer.ui.activities.main.MainHandler" />
+            type="com.teamxenox.brogrammer.ui.activities.main.MainHandler" />
     </data>
 
 

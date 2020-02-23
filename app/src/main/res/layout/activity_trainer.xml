@@ -8,11 +8,11 @@
 
         <variable
             name="handler"
-            type="com.theapache64.brogrammer.ui.activities.trainer.TrainerHandler" />
+            type="com.teamxenox.brogrammer.ui.activities.trainer.TrainerHandler" />
 
         <variable
             name="viewModel"
-            type="com.theapache64.brogrammer.ui.activities.trainer.TrainerViewModel" />
+            type="com.teamxenox.brogrammer.ui.activities.trainer.TrainerViewModel" />
     </data>
 
     <LinearLayout
@@ -40,7 +40,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:context="com.theapache64.brogrammer.ui.activities.trainer.TrainerActivity">
+                tools:context="com.teamxenox.brogrammer.ui.activities.trainer.TrainerActivity">
 
 
                 <ImageView
